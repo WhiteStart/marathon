@@ -25,7 +25,7 @@ pipeline {
             steps {
                 // 在此处添加部署到目标环境的步骤
                 sh 'docker build -t marathon-1.0 .' // 替换为你的部署脚本或命令
-                sh 'docker run --name marathon -d -p 8088:8088 marathon-1.0'
+                sh 'docker run --name marathon -d -p 8088:8088 --privileged marathon-1.0'
             }
         }
 //         stage('Deliver') {
