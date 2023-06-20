@@ -25,31 +25,31 @@ class MarathonApplicationTests {
 //    private EventsMapper eventsMapper;
 
     @Resource
-    private IdGenerator idGenerator;
+//    private IdGenerator idGenerator;
 
-    private ExecutorService es = Executors.newFixedThreadPool(100);
+//    private ExecutorService es = Executors.newFixedThreadPool(100);
 
     @Test
     void testIdWorker() throws InterruptedException {
-        CountDownLatch latch = new CountDownLatch(300);
-        AtomicInteger integer = new AtomicInteger(0);
-        Runnable r = ()->{
-            for (int i = 0; i < 100; i++) {
-                long id = idGenerator.nextId("test");
-                System.out.println("id = " + id);
-                integer.getAndIncrement();
-            }
-            latch.countDown();
-        };
-        long begin = System.currentTimeMillis();
-        for (int i = 0; i < 300; i++) {
-            es.execute(r);
-        }
-
-        latch.await();
-        long end = System.currentTimeMillis();
-        System.out.println("=====cost:" + (end - begin));
-        System.out.println("++++++" + integer);
+//        CountDownLatch latch = new CountDownLatch(300);
+//        AtomicInteger integer = new AtomicInteger(0);
+//        Runnable r = ()->{
+//            for (int i = 0; i < 100; i++) {
+//                long id = idGenerator.nextId("test");
+//                System.out.println("id = " + id);
+//                integer.getAndIncrement();
+//            }
+//            latch.countDown();
+//        };
+//        long begin = System.currentTimeMillis();
+//        for (int i = 0; i < 300; i++) {
+//            es.execute(r);
+//        }
+//
+//        latch.await();
+//        long end = System.currentTimeMillis();
+//        System.out.println("=====cost:" + (end - begin));
+//        System.out.println("++++++" + integer);
     }
 
 
