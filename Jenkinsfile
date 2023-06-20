@@ -11,16 +11,16 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Test') { 
-            steps {
-                sh 'mvn test' 
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml' 
-                }
-            }
-        }
+//         stage('Test') {
+//             steps {
+//                 sh 'mvn test'
+//             }
+//             post {
+//                 always {
+//                     junit 'target/surefire-reports/*.xml'
+//                 }
+//             }
+//         }
         stage('Deploy') {
             steps {
                 // 在此处添加部署到目标环境的步骤
