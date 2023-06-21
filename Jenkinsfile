@@ -17,14 +17,9 @@ pipeline {
             steps {
                 sh '''cd /var/jenkins_home/workspace/marathon
                       docker build -t marathon .
-                      docker run --name marathon -d -p 8088:8088 marathon
+                      docker run --rm --name marathon_test -d -p 8088:8088 marathon
                                     '''
             }
         }
-//         stage('Deliver') {
-//             steps {
-//                 sh './jenkins/scripts/deliver.sh'
-//             }
-//         }
     }
 }
