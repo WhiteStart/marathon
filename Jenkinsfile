@@ -16,7 +16,7 @@ pipeline {
             agent any
             steps {
                 sh '''cd /var/jenkins_home/workspace/marathon
-                      docker build -t test .
+                      docker build -t marathon .
                       docker run --name marathon -d -p 8088:8088 marathon
                                     '''
             }
