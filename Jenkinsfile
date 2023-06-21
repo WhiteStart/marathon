@@ -1,5 +1,11 @@
 pipeline {
     agent none
+
+    // GitHub Webhooks触发条件
+    triggers {
+        githubPush()
+    }
+
     stages {
         stage('Build') {
             agent {
