@@ -15,9 +15,10 @@ pipeline {
         stage('Deploy') {
             agent any
             steps {
-                sh '''cd /var/jenkins_home/workspace/marathon/target
-                                    cp ../Dockerfile ./
-                                    docker build -t test .'''
+                sh '''cd /var/jenkins_home/workspace/marathon
+                      docker build -t test .
+                      docker run --name marathon -d -p 8088:8088 marathon
+                                    '''
             }
         }
 //         stage('Deliver') {
