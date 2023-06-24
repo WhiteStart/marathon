@@ -24,7 +24,7 @@ class MarathonApplicationTests {
 //    @Resource
 //    private EventsMapper eventsMapper;
 
-    @Resource
+//    @Resource
 //    private IdGenerator idGenerator;
 
 //    private ExecutorService es = Executors.newFixedThreadPool(100);

@@ -4,6 +4,10 @@ spring:
     username: root
     password: hmz990203
     driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      # 使用了docker网络中的redis地址
+      host: 172.18.0.2
 
 server:
   port: 8088
