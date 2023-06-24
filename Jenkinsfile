@@ -23,7 +23,7 @@ pipeline {
             steps {
                 sh '''cd /var/jenkins_home/workspace/marathon
                       docker build -t marathon .
-                      docker run --rm --name marathon_test -d -p 8088:8088 marathon
+                      docker run --rm --name marathon_test --network marathon -d -p 8088:8088 marathon
                                     '''
             }
         }
