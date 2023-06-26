@@ -25,6 +25,7 @@ public class TestController {
     @GetMapping("/test")
     public String test(){
         System.out.println("push");
+        System.out.println("omg");
         return "12≥34567";
     }
 
